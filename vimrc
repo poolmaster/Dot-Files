@@ -1,9 +1,9 @@
 "=========================================================================
 " DesCRiption: VIM Configuration for Linux/Windows, GUI/Console
 "
-" Last Change: 07/09/2013 
+" Last Change: 06/20/2018
 "
-" By: Yong Li @ Oracle
+" By: poolmaster
 "
 "=========================================================================
 set runtimepath^=/home/yyoli/.vim/share
@@ -18,8 +18,9 @@ set number                  " display line number
 set cursorline              " highlight cursor line
 set ruler                   " open status ruler
 set shiftwidth=2            " set >> and << shifting length 
-set softtabstop=4           " backspace could delete 4 spaces
-set tabstop=2               " tab width
+set expandtab								" expand tabs into spaces
+set tabstop=2								" use 2 space tabs
+set softtabstop=2						" makes 2 spaces feel like tabs
 set nobackup                " no backups
 set autochdir               " automatically set pwd to curr file dir 
 filetype plugin indent on   " open plugin
@@ -70,8 +71,6 @@ let helptags=$VIMFILES.'/doc'
 if has("win32")
     set guifont=Inconsolata:h12:cANSI
 endif
-
-
 
 if has("multi_byte")
     " UTF-8 encoding
@@ -135,7 +134,7 @@ nnoremap <leader>2 :set filetype=systemverilog<CR>
 let html_use_css=1
 
 "python
-autocmd FileType python set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType python set tabstop=4 shiftwidth=2 expandtab
 autocmd FileType python map <F12> :!python %<CR>
 
 " ctrl + c = copy when selected
@@ -226,10 +225,6 @@ map bl  :call BufferList()
 map bn  :bnext!
 map bp  :bprev!
 map bd  :bdelete
-
-set expandtab            " expand tabs into spaces
-set tabstop=2            " use 2 space tabs
-set softtabstop=2        " makes 2 spaces feel like tabs
 
 "
 " CDMSPP
